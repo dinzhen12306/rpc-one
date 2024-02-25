@@ -1,0 +1,16 @@
+syntax = "proto3";
+option go_package = "./userrpc";
+package stream;
+
+
+service StreamGreeter {
+  rpc SayHello(SayHelloReq) returns (SayHelloResp);
+}
+
+message SayHelloReq {
+  string name = 1;
+}
+
+message SayHelloResp {
+  string greet = 1;
+}
