@@ -25,6 +25,7 @@ func NewUserRpcServer(port string) {
 	if err != nil {
 		panic(err)
 	}
+	reflection.Register(grpcServer)
 	err = grpcServer.Serve(listen)
 	if err != nil {
 		panic(err)
